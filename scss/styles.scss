@@ -1,0 +1,188 @@
+// See also https://github.com/altercation/solarized
+
+$base03: #002b36; // Background Tone
+$base02: #073642; // Background Tone
+$base01: #586e75; // Content Tone
+$base00: #657b83; // Content Tone
+$base0: #839496; // Content Tone
+$base1: #93a1a1; // Content Tone
+$base2: #eee8d5; // Background Tone
+$base3: #fdf6e3; // Background Tone
+$yellow: #b58900; // Accent Split Comp
+$orange: #cb4b16; // Accent Complement
+$red: #dc322f; // Accent Triad
+$magenta: #d33682; // Accent Tetrad
+$violet: #6c71c4; // Accent Analogous
+$blue: #268bd2; // Accent Monotone
+$cyan: #2aa198; // Accent Analogous assas
+$green: #859900; // Accent Tetrad
+
+
+@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
+{
+    background-color:$rebase03 !important;
+    color:$rebase0 !important;
+    * { color:$rebase0 !important; }
+    @include accentize($orange);
+    //h1,h2,h3,h4,h5,h6 { color:$rebase1 !important; border-color: $rebase0 !important; }
+    //a, a:active, a:visited { color: $rebase1 !important; }
+}
+@mixin accentize($accent) {
+    a, a:active, a:visited, code.url { color: $accent !important; }
+    h1,h2,h3,h4,h5,h6 {color:$accent !important;}
+}
+/* light is default mode, so pair with general html definition */
+html, .light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
+.dark  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
+html * {
+    color-profile: sRGB;
+    rendering-intent: auto;
+}
+
+
+body {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+body, button, input, select, textarea {
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+blockquote, body, h1, h2, h3, h4, h5, h6, hr, html, li, ol, p, pre, textarea, ul {
+    margin: 0;
+    margin: 0
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+article, aside, footer, header, section {
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.section {
+    padding: 3rem 1.5rem;
+}
+
+.container {
+    // flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+}
+
+.title.main {
+    font-size: 3rem;
+}
+
+.subtitle.main {
+    font-size: 1.5rem;
+}
+
+.subtitle .title {
+    word-break: break-word;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.cols:last-child {
+    margin-bottom: -.75rem;
+}
+
+.cols {
+    display: flex;
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+    margin-top: -.75rem;
+}
+
+.col {
+    display: block;
+    padding: .75rem;
+}
+
+.col.small {
+    flex: none;
+    width: 16.66667%;
+}
+
+.col.wide {
+    flex: none;
+    width: 75%;
+}
+
+.cols.vertical-center {
+    align-items: center;
+}
+
+.sidebar {
+    font-size: 1rem;
+}
+
+.sidebar-entry-label:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.sidebar-entry-label {
+    font-size: 1em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.sidebar-list {
+    line-height: 1.25;
+}
+
+.sidebar-list a {
+    display: block;
+    padding: .5em .75em;
+    font-size: 1em;
+    letter-spacing: .1em;
+}
+
+article ol {
+    margin-left: 2em;
+}
+
+article ul {
+    margin-left: 2em;
+    list-style: circle;
+}
+
+@media screen and (min-width:1024px) {
+    .container {
+        max-width:960px
+    }
+}
+@media screen and (min-width:1216px) {
+    .container {
+        max-width:1152px
+    }
+}
+@media screen and (min-width:1408px) {
+    .container {
+        max-width:1344px
+    }
+}

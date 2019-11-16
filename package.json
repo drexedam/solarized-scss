@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "copyfiles": "^2.1.1",
+    "node-sass": "^4.13.0",
+    "normalize.css": "^8.0.1"
+  },
+  "scripts": {
+    "scss": "node-sass --watch scss -o css",
+    "copy": "copyfiles --flat node_modules/normalize.css/normalize.css css",
+    "scss-build": "node-sass scss/ -o css/",
+    "build": "concurrently --kill-others \"npm run copy\" \"npm run scss-build\""
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  }
+}
