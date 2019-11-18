@@ -24,8 +24,6 @@ $green: #859900; // Accent Tetrad
     color:$rebase0 !important;
     * { color:$rebase0 !important; }
     @include accentize($orange);
-    //h1,h2,h3,h4,h5,h6 { color:$rebase1 !important; border-color: $rebase0 !important; }
-    //a, a:active, a:visited { color: $rebase1 !important; }
 }
 @mixin accentize($accent) {
     a, a:active, a:visited, code.url { color: $accent !important; }
@@ -52,12 +50,10 @@ body, button, input, select, textarea {
 
 blockquote, body, h1, h2, h3, h4, h5, h6, hr, html, li, ol, p, pre, textarea, ul {
     margin: 0;
-    margin: 0
 }
 
 a {
     text-decoration: none;
-    cursor: pointer;
 }
 
 a:hover {
@@ -77,7 +73,6 @@ ul {
 }
 
 .container {
-    // flex-grow: 1;
     margin: 0 auto;
     position: relative;
     width: auto;
@@ -86,7 +81,8 @@ ul {
 .title {
     font-size: 2rem;
     font-weight: 600;
-    line-height: 1.125;
+    line-height: 1.13;
+    word-break: break-word;
 }
 
 .title.main {
@@ -97,14 +93,11 @@ ul {
     font-size: 1.5rem;
 }
 
-.subtitle .title {
-    word-break: break-word;
-}
-
 .subtitle {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.25;
+    word-break: break-word;
 }
 
 .cols:last-child {
@@ -113,9 +106,7 @@ ul {
 
 .cols {
     display: flex;
-    margin-left: -.75rem;
-    margin-right: -.75rem;
-    margin-top: -.75rem;
+    margin: -.75rem -.75rem 0 -.75rem
 }
 
 .col {
@@ -125,7 +116,7 @@ ul {
 
 .col.small {
     flex: none;
-    width: 16.66667%;
+    width: 16.666%;
 }
 
 .col.wide {
