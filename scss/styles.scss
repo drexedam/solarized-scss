@@ -113,6 +113,7 @@ ul {
 
 .cols {
     display: flex;
+    flex-wrap: wrap;
     margin-left: -.75rem;
     margin-right: -.75rem;
     margin-top: -.75rem;
@@ -121,6 +122,14 @@ ul {
 .col {
     display: block;
     padding: .75rem;
+}
+
+.cols.gen {
+    flex-wrap: wrap;
+}
+
+.col.gen {
+    flex: none;
 }
 
 .col.small {
@@ -169,6 +178,28 @@ article ol {
 article ul {
     margin-left: 2em;
     list-style: circle;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+    display: none;
+}
+
+.break-small {
+    display: block;
+}
+
+@media screen and (max-width:1023px) {
+    .break {
+        display: block;
+    }
+    .break-small {
+        display: none;
+    }
+    .cols.gen {
+        flex-wrap: unset;
+    }
 }
 
 @media screen and (min-width:1024px) {
